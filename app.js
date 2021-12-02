@@ -12,7 +12,6 @@ let messages = [];
 io.on('connection',socket=>{
     console.log("Cliente conectado");
     socket.emit('messagelog',messages);
-    socket.emit('welcome','BIENVENIDO A MI SOCKET BIEN SOCKETSOSO')
     socket.on('message',data=>{
         messages.push(data)
         io.emit('messagelog',messages);

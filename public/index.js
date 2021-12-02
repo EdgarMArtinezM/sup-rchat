@@ -9,13 +9,11 @@ input.addEventListener('keyup',(e)=>{
         }
     }
 })
-socket.on('welcome',data=>{
-    alert(data);
-})
+
 socket.on('messagelog',data=>{
     let p = document.getElementById('log');
     let mensajes = data.map(message=>{
-        return `<div><span>${message.user} dice: ${message.message}</span></div>`
+        return `<div><span style="color:blue">${message.user}</span><span style="color:green">${message.message}</span></div>`
     }).join('');
     p.innerHTML=mensajes;
 })
